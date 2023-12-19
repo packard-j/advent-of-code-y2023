@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "advent-of-code-y2023:lib"
+
+    - path: "./app/Main.hs"
+      component: "advent-of-code-y2023:exe:advent-of-code-y2023-exe"
+
+    - path: "./test"
+      component: "advent-of-code-y2023:test:advent-of-code-y2023-test"

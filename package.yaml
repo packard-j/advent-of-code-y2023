@@ -1,0 +1,66 @@
+name:                advent-of-code-y2023
+version:             0.1.0.0
+github:              "packard-j/advent-of-code-y2023"
+license:             BSD-3-Clause
+author:              "James Packard"
+maintainer:          "example@example.com"
+copyright:           "2023 James Packard"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/packard-j/advent-of-code-y2023#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- attoparsec >= 0.14
+- pipes >= 4.3
+- pipes-parse >= 3.0
+- pipes-attoparsec >= 0.6
+- pipes-bytestring >= 2.1
+- HUnit >= 1.6
+- bytestring >= 0.11
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  advent-of-code-y2023-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - advent-of-code-y2023
+
+tests:
+  advent-of-code-y2023-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - advent-of-code-y2023
