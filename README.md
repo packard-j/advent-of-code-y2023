@@ -1,6 +1,10 @@
 # Advent of Code - 2023
 Solving the Advent of Code puzzles in Haskell.
 
+## Puzzles
+
+1. [Trebuchet?!](src/Day1/Calibration.hs) `runCalibration`
+
 ## Getting Started
 
 For Nix users, start the development shell:
@@ -19,6 +23,3 @@ $ echo "4dventofcod3" | stack run
 > 43
 ```
 
-## Puzzles
-
-1. [Trebuchet?!](src/Day1/Calibration.hs)
