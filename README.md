@@ -1,5 +1,5 @@
 # Advent of Code - 2023
-Solving the Advent of Code challenges in Haskell.
+Solving the Advent of Code puzzles in Haskell.
 
 ## Getting Started
 
@@ -18,3 +18,7 @@ To try out the Day 1 solution, try this example:
 $ echo "4dventofcod3" | stack run
 > 43
 ```
+
+## Puzzles
+
+1. [Trebuchet?!](src/Day1/Calibration.hs)
