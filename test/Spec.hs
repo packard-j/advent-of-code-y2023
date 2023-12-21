@@ -1,12 +1,13 @@
-import Test.HUnit
 import CalibrationParserTest
 import CubesTest
+import Test.HUnit
 
 tests :: Test
-tests = TestList
-  [ "Day 1" ~: testCalibrationValue,
-    "Day 2" ~: testCubes ]
-
+tests =
+  TestList
+    [ "Day 1" ~: testCalibrationValue,
+      "Day 2" ~: testCubes
+    ]
 
 main :: IO ()
 main = do
