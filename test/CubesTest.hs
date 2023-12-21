@@ -4,7 +4,8 @@ module CubesTest (testCubes) where
 
 import Data.Attoparsec.ByteString (endOfInput, parseOnly)
 import Data.ByteString
-import Day2.Cubes
+import Day2.Game
+import Day2.GameParser
 import Test.HUnit
 
 testCubes :: Test
