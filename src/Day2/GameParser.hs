@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Day2.GameParser (gameParser) where
+module Day2.GameParser (gameParser, selectionParser) where
 
 import Control.Applicative
 import Data.Attoparsec.ByteString (Parser, sepBy, string)
