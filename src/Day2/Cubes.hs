@@ -1,6 +1,16 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Day2.Cubes (Game (..), CubeSelection (..), Color (..), countOf, gameParser, selectionParser, colorParser) where
+module Day2.Cubes
+  ( Game (..),
+    CubeSelection (..),
+    Color (..),
+    isGamePossible,
+    countOf,
+    gameParser,
+    selectionParser,
+    colorParser,
+  )
+where
 
 import Control.Applicative
 import Data.Attoparsec.ByteString (Parser, sepBy, string)
@@ -23,6 +33,15 @@ instance Show CubeSelection where
 
 countOf :: CubeSelection -> Color -> Int
 countOf (CubeSelection counts) color = sum $ snd <$> filter ((== color) . fst) counts
+
+isGamePossible :: Game -> CubeSelection -> Bool
+isGamePossible (Game _ selections) available =
+  let maximums = CubeSelection $ (\c -> (c, maxSelection selections c)) <$> colors
+   in all (\c -> countOf maximums c <= countOf available c) colors
+
+maxSelection :: [CubeSelection] -> Color -> Int
+maxSelection [] _ = 0
+maxSelection selections color = maximum $ (`countOf` color) <$> selections
 
 data Color = Red | Green | Blue deriving (Show, Eq, Enum)
 
