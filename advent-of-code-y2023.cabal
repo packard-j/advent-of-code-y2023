@@ -27,6 +27,7 @@ library
   exposed-modules:
       Day1.Calibration
       Day1.CalibrationParser
+      Day2.Cubes
   other-modules:
       Paths_advent_of_code_y2023
   autogen-modules:
@@ -71,6 +72,7 @@ test-suite advent-of-code-y2023-test
   main-is: Spec.hs
   other-modules:
       CalibrationParserTest
+      CubesTest
       Paths_advent_of_code_y2023
   autogen-modules:
       Paths_advent_of_code_y2023
