@@ -28,6 +28,8 @@ library
       Day1.Calibration
       Day1.CalibrationParser
       Day2.Cubes
+      Day2.Game
+      Day2.GameParser
   other-modules:
       Paths_advent_of_code_y2023
   autogen-modules:
