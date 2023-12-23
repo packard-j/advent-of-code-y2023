@@ -4,7 +4,7 @@ module Day2.Game
     CubeSelection (..),
     Color (..),
     gameID,
-    countOf,
+    cubeCount,
     isGamePossible,
   )
 where
@@ -20,10 +20,10 @@ type GameID = Int
 newtype CubeSelection = CubeSelection [(Color, Int)]
 
 instance Eq CubeSelection where
-  s == s' = all (\c -> countOf s c == countOf s' c) colors
+  s == s' = all (\c -> cubeCount s c == cubeCount s' c) colors
 
 instance Show CubeSelection where
-  show s = intercalate ", " ((\c -> showCount c (countOf s c)) <$> colors)
+  show s = intercalate ", " ((\c -> showCount c (cubeCount s c)) <$> colors)
     where
       showCount color count = show color ++ ": " ++ show count
 
@@ -35,20 +35,20 @@ gameID :: Game -> GameID
 gameID (Game gid _) = gid
 
 -- | The number of cubes of the given color in the selection.
-countOf :: CubeSelection -> Color -> Int
-countOf (CubeSelection counts) color = sum $ snd <$> filter ((== color) . fst) counts
+cubeCount :: CubeSelection -> Color -> Int
+cubeCount (CubeSelection counts) color = sum $ snd <$> filter ((== color) . fst) counts
 
 -- | Does the given selection have enough cubes of each color for the game
 -- | to have been played with it?
 isGamePossible :: Game -> CubeSelection -> Bool
 isGamePossible (Game _ selections) available =
   let maximums = maxSelection selections
-   in all (\c -> countOf maximums c <= countOf available c) colors
+   in all (\c -> cubeCount maximums c <= cubeCount available c) colors
 
 -- | What was the maximum count of cubes in each color across the given selections?
 maxSelection :: [CubeSelection] -> CubeSelection
 maxSelection selections = CubeSelection $ (\c -> (c, maxOfColor c)) <$> colors where
-  maxOfColor c = maximum $ (`countOf` c) <$> CubeSelection []:selections
+  maxOfColor c = maximum $ (`cubeCount` c) <$> CubeSelection []:selections
 
 colors :: [Color]
 colors = enumFrom Red
