@@ -4,6 +4,7 @@ Solving the Advent of Code puzzles in Haskell.
 ## Puzzles
 
 1. [Trebuchet?!](src/Day1/Calibration.hs) `runCalibration`
+2. [Cube Conundrum](src/Day2/Cubes.hs) `runPossibleGameIDSum`
 
 ## Getting Started
 
