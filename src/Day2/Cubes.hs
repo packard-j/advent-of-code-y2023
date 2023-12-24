@@ -2,6 +2,8 @@
 
 module Day2.Cubes
   ( runPossibleGameIDSum,
+    possibleGameIDSum,
+    possibleGames
   )
 where
 
@@ -26,7 +28,11 @@ runPossibleGameIDSum = do
 -- | Compute the sum of the ids of games that are possible with the given
 -- | cube selection.
 possibleGameIDSum :: CubeSelection -> [Game] -> Int
-possibleGameIDSum available games = sum $ gameID <$> filter (`isGamePossible` available) games
+possibleGameIDSum available games = sum $ gameID <$> possibleGames available games
+
+-- | Filter to only the games that are possible with the given cube selection.
+possibleGames :: CubeSelection -> [Game] -> [Game]
+possibleGames available = filter (`isGamePossible` available)
 
 -- | Parse a single value from the given bytestring stream, or return Nothing.
 parseOne :: Monad m => Parser b -> Producer ByteString m () -> Effect m (Maybe b)
