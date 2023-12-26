@@ -30,6 +30,8 @@ library
       Day2.Cubes
       Day2.Game
       Day2.GameParser
+      Day3.GearRatios
+      Day3.TextZipper
   other-modules:
       Paths_advent_of_code_y2023
   autogen-modules:
@@ -42,6 +44,7 @@ library
     , attoparsec >=0.14
     , base >=4.7 && <5
     , bytestring >=0.11
+    , containers >=0.6
     , pipes >=4.3
     , pipes-attoparsec >=0.6
     , pipes-bytestring >=2.1
@@ -63,6 +66,7 @@ executable advent-of-code-y2023-exe
     , attoparsec >=0.14
     , base >=4.7 && <5
     , bytestring >=0.11
+    , containers >=0.6
     , pipes >=4.3
     , pipes-attoparsec >=0.6
     , pipes-bytestring >=2.1
@@ -75,6 +79,7 @@ test-suite advent-of-code-y2023-test
   other-modules:
       CalibrationParserTest
       CubesTest
+      TextZipperTest
       Paths_advent_of_code_y2023
   autogen-modules:
       Paths_advent_of_code_y2023
@@ -87,6 +92,7 @@ test-suite advent-of-code-y2023-test
     , attoparsec >=0.14
     , base >=4.7 && <5
     , bytestring >=0.11
+    , containers >=0.6
     , pipes >=4.3
     , pipes-attoparsec >=0.6
     , pipes-bytestring >=2.1
